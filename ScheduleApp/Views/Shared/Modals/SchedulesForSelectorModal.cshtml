@@ -1,0 +1,32 @@
+﻿<div class="modal modal-thin" id="schedulesForSelectorModal" tabindex="-1" role="dialog" aria-labelledby="schedulesForSelectorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Закрыть</span></button>
+                <h4 class="modal-title" id="schedulesForSelectorModalLabel">{{schedulesModalTitle}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row"  ng-show="currentModalPlanningType != 'unplanned'">
+                    <select ng-show="schedules.length > 0" ng-model="currentSchedules" multiple size="20" ng-options="schedule.currentVersion.tutorialName for schedule in schedules"></select>
+                    <span ng-show="schedules.length == 0">Занятий не найдено</span>
+                </div>
+
+                <div class="row" ng-show="currentModalPlanningType == 'unplanned'">
+                    <div class="col-sm-4 pull-left">
+                        <select ng-show="schedules.length > 0" ng-model="currentSchedules" multiple size="20" ng-options="schedule.currentVersion.tutorialName for schedule in schedules"></select>
+                        <span ng-show="schedules.length == 0">Занятий не найдено</span>
+                    </div>
+                    <!--div class="col-md-4 pull-right">
+                        <select ng-show="placings.length > 0" ng-model="currentPlacings" multiple size="20" ng-options="placing.auditorium.number + ' ' + placing.auditorium.buildingShortName + ' ' + placing.time.startTime + '-' + placing.time.endTime + ' ' + daysFull[placing.day].name for placing in placings"></select>
+                        <span ng-show="placings.length == 0">Размещений не найдено</span>
+                    </div>-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="planSchedules();" ng-show="currentSchedules.length > 0 && currentModalPlanningType == 'unplanned'" class="btn btn-success" data-dismiss="modal">Запланировать</button>
+                <button type="button" ng-click="unplanSchedules();" ng-show="currentSchedules.length > 0 && currentModalPlanningType == 'planned'" class="btn btn-danger" data-dismiss="modal">Снять</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>

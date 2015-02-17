@@ -1,0 +1,195 @@
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\ScheduleApp.dll.config
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\ScheduleApp.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\ScheduleApp.pdb
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Antlr3.Runtime.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\EntityFramework.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\EntityFramework.SqlServer.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Newtonsoft.Json.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Owin.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\ScheduleData.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.Helpers.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.Mvc.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.Optimization.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.Razor.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.WebPages.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.WebPages.Razor.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\WebGrease.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\MongoDB.Bson.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\MongoDB.Driver.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\ScheduleData.pdb
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Newtonsoft.Json.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.Helpers.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.Mvc.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.Optimization.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.Razor.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.WebPages.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\System.Web.WebPages.Razor.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Antlr3.Runtime.pdb
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\EntityFramework.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\EntityFramework.SqlServer.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\MongoDB.Bson.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\bin\MongoDB.Driver.xml
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\obj\Release\ScheduleApp.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\obj\Release\ScheduleApp.dll
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleApp\obj\Release\ScheduleApp.pdb
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\ScheduleApp.dll.config
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\ScheduleApp.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\ScheduleApp.pdb
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Antlr3.Runtime.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\EntityFramework.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\EntityFramework.SqlServer.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Newtonsoft.Json.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\NLog.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Owin.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\ScheduleData.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Helpers.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Mvc.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Optimization.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Razor.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.Razor.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\WebGrease.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\MongoDB.Bson.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\MongoDB.Driver.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\ScheduleData.pdb
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Newtonsoft.Json.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\NLog.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Helpers.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Mvc.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Optimization.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Razor.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.Razor.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Antlr3.Runtime.pdb
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\EntityFramework.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\EntityFramework.SqlServer.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\MongoDB.Bson.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\MongoDB.Driver.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\obj\Release\ScheduleApp.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\obj\Release\ScheduleApp.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\obj\Release\ScheduleApp.pdb
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\ScheduleApp.dll.config
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\ScheduleApp.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\ScheduleApp.pdb
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Antlr3.Runtime.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\EntityFramework.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\EntityFramework.SqlServer.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Newtonsoft.Json.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\NLog.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Owin.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\ScheduleData.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Helpers.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Mvc.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Optimization.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Razor.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.Razor.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\WebGrease.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\MongoDB.Bson.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\MongoDB.Driver.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\ScheduleData.pdb
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Newtonsoft.Json.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\NLog.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Helpers.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Mvc.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Optimization.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.Razor.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\System.Web.WebPages.Razor.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Antlr3.Runtime.pdb
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\EntityFramework.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\EntityFramework.SqlServer.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\MongoDB.Bson.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\bin\MongoDB.Driver.xml
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\obj\Release\ScheduleApp.csprojResolveAssemblyReference.cache
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\obj\Release\ScheduleApp.dll
+C:\Users\pyatin\Documents\GitHub\scheduleVkApp\ScheduleApp\obj\Release\ScheduleApp.pdb

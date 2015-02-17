@@ -1,0 +1,243 @@
+﻿<style>
+    .modal.modal-wide .modal-dialog {
+        width: 90%;
+    }
+
+    .modal.modal-medium .modal-dialog {
+        width: 65%;
+    }
+
+    .modal.modal-halfmedium .modal-dialog {
+        width: 45%;
+    }
+
+    .modal.modal-thin .modal-dialog {
+        width: 28%;
+    }
+
+    .modal-wide .modal-body {
+        overflow-y: auto;
+    }
+
+    .modal-thin .modal-body {
+        overflow-y: auto;
+    }
+
+    .modal-medium .modal-body {
+        overflow-y: auto;
+    }
+
+    .modal-halfmedium .modal-body {
+        overflow-y: auto;
+    }
+
+    #container {
+        max-width: 800px;
+        height: 800px;
+        margin: auto;
+    }
+
+</style>
+
+<div ng-controller="planningController as pc" ng-init="onInit();">
+
+    <div class="modal modal-wide" id="planningModal" tabindex="-1" role="dialog" aria-labelledby="planningModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Закрыть</span></button>
+                    <h4 class="modal-title" id="planningModalLabel">Планирование</h4>
+                </div>
+                <div class="modal-body">
+
+                   
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="row">
+
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <select class="input-sm" ng-model="currentThreadSelector" ng-options="threadSelector.name for threadSelector in threadSelectors"></select>
+                                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addThreadSelectorModal" ng-click="addThreadSelector();">Добавить селектор</button>
+                                        <button type="button" ng-click="dellThreadSelector();" ng-show="currentThreadSelector" class="btn btn-default">Удалить селектор</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <select ng-click="unselectThreadSelector();" ng-model="currentSpecialities" multiple size="20" ng-options="speciality.name for speciality in specialities"></select>
+                                    </div>
+                                    <div class="col-md-6 pull-right">
+                                        <select ng-click="unselectThreadSelector();" ng-model="currentGroups" multiple size="20" ng-options="group.code + ' ' + group.specialityName for group in groups"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <table class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Лекции</th>
+                                                    <th>Прак.</th>
+                                                    <th>Лаб.</th>
+                                                    <th>Другое</th>
+                                                    <th>Всего</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody style="cursor: pointer;">
+                                                <tr>
+                                                    <td>Общее</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('Лек','all');">{{schedulesCounter.lecturesCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('Прак','all');">{{schedulesCounter.practiceCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('Лаб','all');">{{schedulesCounter.labsCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('other','all');">{{schedulesCounter.othersCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('all','all');">{{schedulesCounter.totalCount}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Запланировано</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('Лек','planned');">{{schedulesCounter.plannedLecturesCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('Прак','planned');">{{schedulesCounter.plannedPracticeCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('Лаб','planned');">{{schedulesCounter.plannedLabsCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('other','planned');">{{schedulesCounter.plannedOthersCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('all','planned');">{{schedulesCounter.plannedTotalCount}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Незапланировано</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('Лек','unplanned');">{{schedulesCounter.unplannedLecturesCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('Прак','unplanned');">{{schedulesCounter.unplannedPracticeCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('Лаб','unplanned');">{{schedulesCounter.unplannedLabsCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('other','unplanned');">{{schedulesCounter.unplannedOthersCount}}</td>
+                                                    <td data-container="body" data-toggle="tooltip" data-placement="bottom" data-original-title="Показать занятия" ng-click="getSchedulesForSelector('all','unplanned');">{{schedulesCounter.unplannedTotalCount}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <button type="button" tooltip-placement="right" tooltip="Показать диаграммой" class="list btn btn-default btn-sm" ng-click="openThreadSelectorChart();">
+                                            <span class="glyphicon glyphicon-signal"></span>
+                                        </button>
+
+                                        <button type="button" tooltip-placement="right" tooltip="Показать граф" class="list btn btn-default btn-sm" ng-click="getGraphForSchedules();">
+                                            <span class="glyphicon glyphicon-signal"></span>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <select class="input-sm" ng-model="currentQuartersSelector" ng-options="quartersSelector.name for quartersSelector in quartersSelectors"></select>
+                                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addQuartersSelectorModal" ng-click="addQuartersSelector();">Добавить селектор</button>
+                                        <button type="button" ng-click="dellQuartersSelector();" ng-show="currentQuartersSelector" class="btn btn-default">Удалить селектор</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <select ng-click="unselectQuartersSelector();" ng-model="currentBuildings" multiple size="20" ng-options="building.shortName for building in buildings"></select>
+                                    </div>
+                                    <div class="col-md-8 pull-right">
+                                        <select ng-click="unselectQuartersSelector();" ng-model="currentAuditoriums" multiple size="20" ng-options="auditorium.number + ' ' + auditorium.buildingShortName + ' ' + auditorium.type for auditorium in auditoriums"></select>
+                                        <select ng-click="unselectQuartersSelector();" ng-model="currentDays" multiple size="20" ng-options="day.name for day in daysFull"></select>
+                                        <select ng-click="unselectQuartersSelector();" ng-model="currentTimes" multiple size="20" ng-options="time.startTime + '-' + time.endTime for time in times"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <table class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Ауд.</th>
+                                                    <th>Каб.</th>
+                                                    <th>Лаб.</th>
+                                                    <th>Дисп.</th>
+                                                    <th>Линг.</th>
+                                                    <th>Зал.</th>
+                                                    <th>Др.</th>
+                                                    <th>Все</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody style="cursor: pointer;">
+
+                                                <tr>
+                                                    <td>Всего</td>
+                                                    <td ng-click="getPlacingsForSelector(1,'all');">{{quartersCounter.allAuditoriumsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(2,'all');">{{quartersCounter.allCabinetsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(4,'all');">{{quartersCounter.allLaboratoriesCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(3,'all');">{{quartersCounter.allDisplayRoomsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(8,'all');">{{quartersCounter.allLingafonRoomsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(6,'all');">{{quartersCounter.allHallsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(-1,'all');">{{quartersCounter.allOthersCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(-2,'all');">{{quartersCounter.allAllCount}}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Занято</td>
+                                                    <td ng-click="getPlacingsForSelector(1,'busy');">{{quartersCounter.busyAuditoriumsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(2,'busy');">{{quartersCounter.busyCabinetsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(4,'busy');">{{quartersCounter.busyLaboratoriesCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(3,'busy');">{{quartersCounter.busyDisplayRoomsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(8,'busy');">{{quartersCounter.busyLingafonRoomsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(6,'busy');">{{quartersCounter.busyHallsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(-1,'busy');">{{quartersCounter.busyOthersCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(-2,'busy');">{{quartersCounter.busyAllCount}}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Свободно</td>
+                                                    <td ng-click="getPlacingsForSelector(1,'free');">{{quartersCounter.freeAuditoriumsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(2,'free');">{{quartersCounter.freeCabinetsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(4,'free');">{{quartersCounter.freeLaboratoriesCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(3,'free');">{{quartersCounter.freeDisplayRoomsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(8,'free');">{{quartersCounter.freeLingafonRoomsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(6,'free');">{{quartersCounter.freeHallsCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(-1,'free');">{{quartersCounter.freeOthersCount}}</td>
+                                                    <td ng-click="getPlacingsForSelector(-2,'free');">{{quartersCounter.freeAllCount}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <button type="button" tooltip-placement="right" tooltip="Показать диаграммой" class="list btn btn-default btn-sm" ng-click="openQuartersSelectorChart();">
+                                            <span class="glyphicon glyphicon-signal"></span>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("Modals/AddThreadSelectorModal")
+    @Html.Partial("Modals/AddQuartersSelectorModal")
+    @Html.Partial("Modals/SchedulesForSelectorModal")
+    @Html.Partial("Modals/PlacingsForSelectorModal")
+    @Html.Partial("Modals/ThreadSelectorDiagramModal")
+    @Html.Partial("Modals/QuartersSelectorDiagramModal")
+    @Html.Partial("Modals/ScheduleGraphModal")
+   
+</div>
+
+

@@ -1,0 +1,10 @@
+c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\bin\Debug\ScheduleData.dll
+c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\bin\Debug\ScheduleData.pdb
+c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\bin\Debug\MongoDB.Bson.dll
+c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\bin\Debug\MongoDB.Driver.dll
+c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\bin\Debug\MongoDB.Bson.xml
+c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\bin\Debug\MongoDB.Driver.xml
+c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\obj\Debug\ScheduleData.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\obj\Debug\ScheduleData.dll
+c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\obj\Debug\ScheduleData.pdb
+C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\bin\Debug\ScheduleData.dll.config

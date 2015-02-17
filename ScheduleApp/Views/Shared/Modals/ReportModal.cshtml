@@ -1,0 +1,39 @@
+﻿
+<div class="modal" ng-controller="reportController as rc" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Закрыть</span></button>
+                <h4 class="modal-title" id="reportModalLabel">Отчеты</h4>
+            </div>
+            <div class="modal-body">
+                <!--form class="form-horizontal" role="form" name="form">-->
+
+                    <!--<div class="form-group">-->
+                        <div class="checkbox" ng-repeat="course in courses">
+                            <label><input type="checkbox" value="">{{course}} курс</label>
+                        </div>
+                    <!--</div>-->
+
+                    <!--<div class="form-group">-->
+                        <ul>
+                            <li ng-repeat="speciality in specialities">{{speciality.name}}</li>
+                        </ul>
+                        <div class="col-sm-12">
+                            <input typeahead="obj as obj.name for obj in getSpecialities($viewValue)" class="form-control" autocomplete="off" autofocus="autofocus" onclick="this.setSelectionRange(0, this.value.length)" type="text" placeholder="Введите специальность" ng-model="currentSpeciality" />
+                        </div>
+                        <button type="button" class="btn btn-primary" ng-click="addSpeciality();">Добавить</button>
+                    <!--</div>-->
+               <!-- </form>-->
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary" ng-click="">Получить отчет</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

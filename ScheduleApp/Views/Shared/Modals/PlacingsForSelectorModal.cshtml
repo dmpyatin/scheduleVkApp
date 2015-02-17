@@ -1,0 +1,17 @@
+﻿<div class="modal modal-thin" id="placingsForSelectorModal" tabindex="-1" role="dialog" aria-labelledby="placingsForSelectorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Закрыть</span></button>
+                <h4 class="modal-title" id="placingsForSelectorModalLabel">Размещения</h4>
+            </div>
+            <div class="modal-body">
+                <select ng-show="placings.length > 0" ng-model="currentPlacings" multiple size="20" ng-options="placing.auditorium.number + ' ' + placing.auditorium.buildingShortName + ' ' + placing.time.startTime + '-' + placing.time.endTime + ' ' + daysFull[placing.day].name for placing in placings"></select>
+                <span ng-show="placings.length == 0">Размещений не найдено</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduleApp", "ScheduleApp\ScheduleApp.csproj", "{FEBDE835-B3C9-4BD0-B174-0683FCA62358}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduleData", "ScheduleData\ScheduleData.csproj", "{0540363A-4B13-4637-B35D-E8685FF50B07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracleToMdbConverter", "OracleToMdbConverter\OracleToMdbConverter.csproj", "{798E7301-76BC-4E1D-BB41-5FC566009345}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{324B5034-9DF9-48B5-90F2-4577AA123161}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumPetrSU", "SeleniumPetrSU\SeleniumPetrSU\SeleniumPetrSU.csproj", "{124EF580-FD25-4F38-A3D7-4AE20B00EB21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEBDE835-B3C9-4BD0-B174-0683FCA62358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEBDE835-B3C9-4BD0-B174-0683FCA62358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEBDE835-B3C9-4BD0-B174-0683FCA62358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEBDE835-B3C9-4BD0-B174-0683FCA62358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0540363A-4B13-4637-B35D-E8685FF50B07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0540363A-4B13-4637-B35D-E8685FF50B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0540363A-4B13-4637-B35D-E8685FF50B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0540363A-4B13-4637-B35D-E8685FF50B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{798E7301-76BC-4E1D-BB41-5FC566009345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{798E7301-76BC-4E1D-BB41-5FC566009345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{798E7301-76BC-4E1D-BB41-5FC566009345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{798E7301-76BC-4E1D-BB41-5FC566009345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{124EF580-FD25-4F38-A3D7-4AE20B00EB21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{124EF580-FD25-4F38-A3D7-4AE20B00EB21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{124EF580-FD25-4F38-A3D7-4AE20B00EB21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{124EF580-FD25-4F38-A3D7-4AE20B00EB21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

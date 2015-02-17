@@ -1,0 +1,31 @@
+﻿
+
+<div class="modal" id="addQuartersSelectorModal" tabindex="-1" role="dialog" aria-labelledby="addQuartersSelectorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Закрыть</span></button>
+                <h4 class="modal-title" id="addQuartersSelectorModalLabel">Добавление селектора для размещений</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" name="form">
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <input typeahead="obj as obj.name for obj in getQuartersSelectorsModal($viewValue)" class="form-control" autocomplete="off" autofocus="autofocus" onclick="this.setSelectionRange(0, this.value.length)" type="text" placeholder="Введите название селектора" ng-model="currentQuartersSelectorName" />
+                        </div>
+                        <div class="pull-left text-danger col-md-10" ng-show='addQuartersSelectorMessage'>
+                            <i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;<b>{{addQuartersSelectorMessage}}</b>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary" ng-click="addQuartersSelectorModal();">Добавить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,190 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+    <div class="row-fluid" style="margin-top: 5px;">
+
+        <div class="col-md-2" ng-show="unschedules.length > 0 && changeMode">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr class="info">
+                        <th style="min-width: 60px; width: 60px">Незапланированные</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="schedule in unschedules">
+                        <td style="min-width:110px;" data-drop="true" data-jqyoui-options jqyoui-droppable="{onDrop: 'unscheduleDrop()'}" ng-mouseover="" ng-mouseleave="">
+                            <div ng-class="(schedule == selectedSchedule && changeMode) ? 'selectedScheduleClass' : 'unselectedScheduleClass' " ng-mouseover="selectSchedule(schedule);" ng-mouseleave="selectSchedule(undefined);"
+                                 data-drag="{{changeMode}}" data-jqyoui-options="{revert: 'invalid'} "
+                                 jqyoui-draggable="{animate:true, onStart: 'scheduleStartDrag(schedule)', onStop: 'scheduleStopDrag(schedule)'}"
+                                 ng-dblclick="changeSchedule(schedule)">
+                                <i>
+                                    <strong>{{schedule.currentVersion.startTime}}-{{schedule.currentVersion.endTime}}</strong>
+                                    </br>
+                                    <strong>
+                                        {{schedule.currentVersion.weekTypeName}}
+                                    </strong>
+                                    <strong>
+                                        {{schedule.currentVersion.auditoriumNumber}}
+                                    </strong>
+                                        
+                                    
+
+                                    <span>
+                                        {{schedule.currentVersion.buildingName}}
+                                        {{schedule.currentVersion.tutorialName}}
+                                        {{schedule.currentVersion.tutorialTypeName}}.
+                                    </span>
+
+                                    <br ng-show="schedule.currentVersion.subGroupName != '-'" />
+                                    <span ng-show="schedule.currentVersion.subGroupName != '-'">
+                                        Подгр. {{schedule.currentVersion.subGroupName}}
+                                    </span>
+
+                                    </br>
+                                    <span nowrap ng-show="mode == 'students'">
+                                        {{schedule.currentVersion.lecturerName}}
+                                    </span>
+
+                                    <span nowrap ng-show="mode == 'lecturers'">
+                                        {{schedule.currentVersion.groupCode}}
+                                    </span>
+
+                                    <br />
+                                    <span style="color:gainsboro; font-size:0.8em;" nowrap>
+                                        {{schedule.currentVersion.editor}}
+                                    </span>
+                                </i>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div ng-class="(unschedules.length > 0 && changeMode) ? 'col-md-10' : 'col-md-12'">
+
+            <table class=" table table-bordered table-striped" ng-show="showTable && view == 'grid'">
+                <thead>
+                    <tr class="info">
+                        <th style="min-width: 60px; width: 60px">№</th>
+                        <th ng-repeat="day in days">{{day}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="pair in pairs">
+                        <td><strong>{{pair}}</strong></td>
+                        <td style="min-width:110px;" data-drop="true" ng-dblclick="addSchedule(pair, $index+1)" data-jqyoui-options jqyoui-droppable="{onDrop: 'scheduleDrop(this, pair, $index+1)'}" ng-repeat=" day in days" ng-mouseover="selectCell(pair,$index+1);" ng-mouseleave="selectCell(-1,-1);">
+
+
+                            <div ng-class="(schedule == selectedSchedule && changeMode) ? 'selectedScheduleClass' : 'unselectedScheduleClass' " ng-repeat=" schedule in getSchedulesForCell(pair,$index+1)" ng-mouseover="selectSchedule(schedule);" ng-mouseleave="selectSchedule(undefined);"
+                                 data-drag="{{changeMode}}" data-jqyoui-options="{revert: 'invalid'} "
+                                 jqyoui-draggable="{animate:true, onStart: 'scheduleStartDrag(schedule)', onStop: 'scheduleStopDrag(schedule)'}"
+                                 ng-dblclick="changeSchedule(schedule)">
+                                <hr ng-show=" $index > 0" style="margin:5px;" />
+
+                                <div ng-show="!isLinkedSchedule(schedule);">
+
+                                    <span ng-click="unscheduleSchedule(schedule);" tooltip-placement="right" tooltip="Снять" ng-show="(schedule == selectedSchedule && changeMode)" aria-hidden=" true" style="font-size:2em; position:absolute; top:-10px; right:5px;">&times;</span><span class="sr-only">Снять</span>
+                                    <i>
+                                        <strong>{{schedule.currentVersion.startTime}}-{{schedule.currentVersion.endTime}}</strong>
+                                        </br>
+                                        <strong >
+                                            {{schedule.currentVersion.weekTypeName}}
+                                        </strong>
+                                        <strong>
+                                            {{schedule.currentVersion.auditoriumNumber}}
+                                            
+                                        </strong>
+
+                                        <span>
+                                            {{schedule.currentVersion.buildingName}}
+                                            {{schedule.currentVersion.tutorialName}}
+                                            {{schedule.currentVersion.tutorialTypeName}}.
+                                        </span>
+
+                                        <br ng-show="schedule.currentVersion.subGroupName != '-'" />
+                                        <span ng-show="schedule.currentVersion.subGroupName != '-'">
+                                            Подгр. {{schedule.currentVersion.subGroupName}}
+                                        </span>
+
+                                        </br>
+                                        <span nowrap ng-show="mode == 'students'">
+                                            {{schedule.currentVersion.lecturerName}}
+                                        </span>
+
+                                        <span nowrap ng-show="mode == 'lecturers'">
+                                            {{schedule.currentVersion.groupCode}}
+                                        </span>
+
+                                        <br />
+                                        <span style="color:gainsboro; font-size:0.8em;" nowrap>
+                                            {{schedule.currentVersion.editor}}
+                                        </span>
+                                    </i>
+                                </div>
+                                <div ng-show="isLinkedSchedule(schedule);">
+                                    <i>
+                                        <strong style="color:#c61313">
+                                            {{schedule.currentVersion.weekTypeName}}
+                                            {{schedule.currentVersion.startTime}}-{{schedule.currentVersion.endTime}}
+                                            
+                                        </strong>
+
+                                    </i>
+                                
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <div ng-show="showTable && view == 'list'" ng-repeat="day in daysFull" ng-mouseover="selectDay(day);" ng-mouseleave="selectDay(undefined);">
+                <table class="table table-bordered table-striped">
+
+
+                    <caption class="text-left"><strong>{{day}}</strong></caption>
+                    <thead>
+                        <tr class="info">
+                            <th style="min-width: 30px; width: 30px">№</th>
+                            <th></th>
+                            <th>Время</th>
+                            <th>Предмет</th>
+                            <th>Преподаватель</th>
+                            <th>Вид</th>
+                            <th>Подг.</th>
+                            <th>Ауд.</th>
+                            <th>Корпус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="schedule in getSchedulesForDay($index+1)" ng-click="changeSchedule(schedule);" ng-mouseover="selectSchedule(schedule)" ng-class="(schedule == selectedSchedule && changeMode) ? 'selectedScheduleClass' : 'unselectedScheduleClass' ">
+                            <td><i><strong>{{schedule.currentVersion.pairNumber}}</strong></i></td>
+                            <td><i>{{schedule.currentVersion.weekTypeName}}</i></td>
+                            <td><i>{{schedule.currentVersion.startTime}}-{{schedule.currentVersion.endTime}}</i></td>
+                            <td><i>{{schedule.currentVersion.tutorialName}}</i></td>
+                            <td><i>{{schedule.currentVersion.lecturerName}}</i></td>
+                            <td><i>{{schedule.currentVersion.tutorialTypeName}}</i></td>
+                            <td><i>{{schedule.currentVersion.subGroupName}}</i></td>
+                            <td><i>{{schedule.currentVersion.auditoriumNumber}}</i></td>
+                            <td><i>{{schedule.currentVersion.buildingName}}</i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="!showTable">
+        <img class="center" src='@Url.Content("~/Content/background.jpg")'>
+    </div>
+    <div ng-show="showTable">
+        <hr />
+        <footer style="text-align: center;">
+            <p>Исходные данные соответствуют расписаниям с <a target="_blank" href="http://student.iias.petrsu.ru/pls/apex/f?p=185:1:3772793097742397">официального сайта ПетрГУ</a> на 03.10.2014</p>
+            <p>Отредактированные пользователями данные содержат подпись.</p>
+        </footer>
+    </div>
+
