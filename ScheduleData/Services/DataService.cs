@@ -161,11 +161,15 @@ namespace ScheduleData.Services
 
         public IList<ScheduleData.Models.Group> GetGroupsByFirstMatching(string template)
         {
-            var query = Query.Or(
-                Query.Matches("Code", "/^" + template.Trim() + "/"),
-                Query.Matches("SpecialityName", "/^" + template.Trim() + "/")
-                );
-            return _groups.Find(query).Take(15).ToList();
+            if (!String.IsNullOrEmpty(template))
+            {
+                var query = Query.Or(
+                    Query.Matches("Code", "/^" + template.Trim() + "/"),
+                    Query.Matches("SpecialityName", "/^" + template.Trim() + "/")
+                    );
+                return _groups.Find(query).Take(15).ToList();
+            }
+            return new List<ScheduleData.Models.Group>() { };
         }
 
         public IList<Schedule> GetSchedulesForGroup(string groupCode, string specialityName)

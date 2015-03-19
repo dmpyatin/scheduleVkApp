@@ -8,3 +8,15 @@ c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\obj
 c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\obj\Debug\ScheduleData.dll
 c:\users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\obj\Debug\ScheduleData.pdb
 C:\Users\user\documents\visual studio 2013\Projects\ScheduleApp\ScheduleData\bin\Debug\ScheduleData.dll.config
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\bin\Debug\ScheduleData.dll.config
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\bin\Debug\ScheduleData.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\bin\Debug\ScheduleData.pdb
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\bin\Debug\MongoDB.Bson.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\bin\Debug\MongoDB.Driver.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\bin\Debug\NLog.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\bin\Debug\MongoDB.Bson.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\bin\Debug\MongoDB.Driver.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\bin\Debug\NLog.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\obj\Debug\ScheduleData.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\obj\Debug\ScheduleData.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\ScheduleData\obj\Debug\ScheduleData.pdb

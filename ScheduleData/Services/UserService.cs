@@ -21,7 +21,7 @@ namespace ScheduleData.Services
         public UserService()
         {
             var con = new MongoConnectionStringBuilder(
-               ConfigurationManager.ConnectionStrings["MongoDb"].ConnectionString);
+               ConfigurationManager.ConnectionStrings["MongoDbUsers"].ConnectionString);
 
             MongoClient client = new MongoClient(con.ConnectionString);
             MongoServer server = client.GetServer();

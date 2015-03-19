@@ -1,0 +1,13 @@
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\bin\Debug\OracleToMdbConverter.exe.config
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\bin\Debug\OracleToMdbConverter.exe
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\bin\Debug\OracleToMdbConverter.pdb
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\bin\Debug\MongoDB.Bson.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\bin\Debug\MongoDB.Driver.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\bin\Debug\Oracle.DataAccess.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\bin\Debug\ScheduleData.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\bin\Debug\ScheduleData.pdb
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\bin\Debug\MongoDB.Bson.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\bin\Debug\MongoDB.Driver.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\obj\Debug\OracleToMdbConverter.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\obj\Debug\OracleToMdbConverter.exe
+C:\Users\user\Documents\GitHub\scheduleVkApp\OracleToMdbConverter\obj\Debug\OracleToMdbConverter.pdb

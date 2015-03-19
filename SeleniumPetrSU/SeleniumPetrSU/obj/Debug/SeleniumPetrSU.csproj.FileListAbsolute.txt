@@ -14,3 +14,21 @@ C:\Users\user\documents\visual studio 2013\Projects\SeleniumPetrSU\SeleniumPetrS
 C:\Users\user\documents\visual studio 2013\Projects\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\MongoDB.Driver.dll
 C:\Users\user\documents\visual studio 2013\Projects\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\MongoDB.Bson.xml
 C:\Users\user\documents\visual studio 2013\Projects\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\MongoDB.Driver.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\SeleniumPetrSU.exe.config
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\SeleniumPetrSU.exe
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\SeleniumPetrSU.pdb
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\MongoDB.Bson.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\MongoDB.Driver.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\ScheduleData.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\ThoughtWorks.Selenium.Core.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\WebDriver.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\WebDriver.Support.dll
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\ScheduleData.pdb
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\MongoDB.Bson.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\MongoDB.Driver.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\ThoughtWorks.Selenium.Core.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\WebDriver.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\bin\Debug\WebDriver.Support.xml
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\obj\Debug\SeleniumPetrSU.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\obj\Debug\SeleniumPetrSU.exe
+C:\Users\user\Documents\GitHub\scheduleVkApp\SeleniumPetrSU\SeleniumPetrSU\obj\Debug\SeleniumPetrSU.pdb
