@@ -51,7 +51,7 @@ namespace ScheduleApp.Controllers
         public ActionResult TypeAheadGroups(string template)
         {
             _dataService = new DataService();
-            var result = _dataService.GetGroupsByFirstMatching(template);
+            var result = _dataService.GetGroupsByFirstMatching(template, 15);
             return new JsonNetResult(result);
         }
 
@@ -135,7 +135,7 @@ namespace ScheduleApp.Controllers
         public ActionResult TypeAheadLecturers(string template)
         {
             _dataService = new DataService();
-            var result = _dataService.GetLecturersByFirstMatching(template);
+            var result = _dataService.GetLecturersByFirstMatching(template, 15);
             return new JsonNetResult(result);
         }
 

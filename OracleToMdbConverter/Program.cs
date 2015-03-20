@@ -12,10 +12,12 @@ namespace OracleToMdbConverter
         static void Main(string[] args)
         {
             var converter = new Converter();
-            converter.Load("buildings");
+            /*converter.Load("buildings");
             converter.Load("auditoriums");
             converter.Load("specialities");
-            converter.SaveAll();
+            converter.SaveAll();*/
+
+            //converter.SyncBuildings(true);
         }
     }
 }

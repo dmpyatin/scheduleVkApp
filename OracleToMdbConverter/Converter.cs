@@ -75,34 +75,61 @@ namespace OracleToMdbConverter
         }
 
 
-        void LoadBuildings()
+        void LoadBuildings(bool withLiving)
         {
             oracleConn.Open();
 
             var cmd = oracleConn.CreateCommand();
-            cmd.CommandText = @"SELECT        
+
+            if (!withLiving)
+            {
+                cmd.CommandText = @"SELECT        
                                     ID AS IAIS_ID, 
                                     NAMEFULL AS Name, 
-                                    NAMESHORT AS ShortName
+                                    NAMESHORT AS ShortName,
+                                    ADDRESS AS Address
                                 FROM            
                                     SDMS.B_BULDINGS
                                 WHERE        
                                     (STATUS = 'Y' AND 
-                                     TYPE_HOST IS NULL);";
+                                     TYPE_HOST IS NULL)";
+            }
+            else
+            {
+                cmd.CommandText = @"SELECT        
+                                    ID AS IAIS_ID, 
+                                    NAMEFULL AS Name, 
+                                    NAMESHORT AS ShortName,
+                                    ADDRESS AS Address
+                                FROM            
+                                    SDMS.B_BULDINGS
+                                WHERE        
+                                    (STATUS = 'Y')";
+            }
             var reader = cmd.ExecuteReader();
 
  
             while (reader.Read())
             {
+
                 var IAIS_Id = reader.GetInt64(0);
                 var Name = reader.GetString(1);
                 var ShortName = reader.GetString(2);
+
+
+                var Address = "";
+
+                if (!reader.IsDBNull(3))
+                {
+                    Address = reader.GetString(3);
+                }
 
                 var building = new Building()
                 {
                     IAIS_ID = IAIS_Id.ToString(),
                     Name = Name,
-                    ShortName = ShortName
+                    ShortName = ShortName,
+                    Address = Address
                 };
 
                 //_buildings.Insert(building);
@@ -134,7 +161,7 @@ namespace OracleToMdbConverter
                                      (B_QUARTERS.BLD_ID = B_BULDINGS.ID AND
                                       B_QUARTERS.LIVING = 'N' AND
                                       B_BULDINGS.STATUS = 'Y' AND
-                                      B_QUARTERS.STATUS = 'Y');";
+                                      B_QUARTERS.STATUS = 'Y')";
 
             var reader = cmd.ExecuteReader();
 
@@ -181,7 +208,7 @@ namespace OracleToMdbConverter
 	                                U_RASP_STR
                                 WHERE
 	                                (V_RASP_DESK_N.SR_ID = U_RASP_STR.SR_ID AND
-	                                U_RASP_STR.UBU_UBU_ID = V_STUD_GR.UBU_ID);";
+	                                U_RASP_STR.UBU_UBU_ID = V_STUD_GR.UBU_ID)";
 
             var reader = cmd.ExecuteReader();
 
@@ -212,7 +239,7 @@ namespace OracleToMdbConverter
         {
             if (tableName == "buildings")
             {
-                this.LoadBuildings();
+                this.LoadBuildings(false);
             }
 
             if (tableName == "auditoriums")
@@ -228,6 +255,89 @@ namespace OracleToMdbConverter
 
         public void SaveAll()
         {
+
+        }
+
+
+
+        //Building ShortName is the main linked parameter
+        public void SyncBuildings(bool removePrevious)
+        {
+            if (_orBuildings.Count == 0)
+            {
+                this.LoadBuildings(true);
+            }
+
+            if (removePrevious)
+            {
+                _buildings.RemoveAll();
+            }
+
+            foreach (var building in _orBuildings)
+            {
+                var query = Query<Building>.EQ(x => x.ShortName, building.ShortName);
+                var currentBuildings = _buildings.Find(query).ToList();
+
+
+                if (String.IsNullOrEmpty(building.Address))
+                    building.Address = building.Name + " ПетрГУ г. Петрозаводск";
+
+                if (currentBuildings.Count == 0)
+                {
+                    
+                    _buildings.Insert(building);
+                }
+                else
+                {
+
+                    var update = Update<Building>
+                        .Set(x => x.IAIS_ID, building.IAIS_ID)
+                        .Set(x => x.Name, building.Name)
+                        .Set(x => x.ShortName, building.ShortName)
+                        .Set(x => x.Address, building.Address);
+
+                    _buildings.FindAndModify(query, SortBy.Null, update);
+                }
+
+
+            }
+
+            var auditoriums = _auditoriums.FindAll().ToList();
+
+            foreach (var auditorium in auditoriums)
+            {
+                var query = Query<Building>.EQ(x => x.ShortName, auditorium.BuildingShortName);
+                var currentBuilding = _buildings.Find(query).ToList().First();
+
+                var newID = int.Parse(currentBuilding.IAIS_ID);
+
+                var update = Update<Auditorium>.Set(x => x.Building, newID);
+
+                var audUpdateQuery = Query<Auditorium>.EQ(x => x.Id, auditorium.Id);
+
+                _auditoriums.FindAndModify(audUpdateQuery, SortBy.Null, update);
+            }
+
+
+            var schedules = _schedules.FindAll().ToList();
+            foreach (var schedule in schedules)
+            {
+                var query = Query<Building>.EQ(x => x.ShortName, schedule.CurrentVersion.BuildingName);
+                var currentBuildings = _buildings.Find(query).ToList();
+
+                if (currentBuildings.Count > 0)
+                {
+                    var currentBuilding = currentBuildings.First();
+
+                    //it must update scheudle versions array too
+                    var update = Update<Schedule>.Set(x => x.CurrentVersion.BuildingAddress, currentBuilding.Address);
+
+
+                    var scheduleUpdateQuery = Query<Schedule>.EQ(x => x.Id, schedule.Id);
+
+                    _schedules.FindAndModify(scheduleUpdateQuery, SortBy.Null, update);
+                }            
+            }
 
         }
 

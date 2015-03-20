@@ -20,6 +20,7 @@ namespace ScheduleData.Models
         public string SubGroupName { get; set; }
         public string AuditoriumNumber { get; set; }
         public string BuildingName { get; set; }
+        public string BuildingAddress { get; set; }
 
         public string StartTime { get; set; }
         public string EndTime { get; set; }

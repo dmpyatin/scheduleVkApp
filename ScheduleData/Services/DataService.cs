@@ -112,6 +112,19 @@ namespace ScheduleData.Services
             return _specialities.Find(query).Take(15).ToList();
         }
 
+        public IList<Auditorium> GetAuditoriumsByFirstMatching(string template, int count)
+        {
+            if (!String.IsNullOrEmpty(template))
+            {
+                var query = Query.Or(Query.Matches("Number", "/^" + template.Trim() + "/"),
+                                     Query.Matches("BuildingShortName", "/^" + template.Trim() + "/"));
+
+                return _auditoriums.Find(query).Take(count).ToList();
+            }
+            return new List<Auditorium>() { };
+        }
+
+
         public IList<Auditorium> GetAuditoriumsByFirstMatching(string template, int pair, int day, string weekType, string tutorialType)
         {
 
@@ -149,17 +162,21 @@ namespace ScheduleData.Services
         }
 
 
-        public IList<Lecturer> GetLecturersByFirstMatching(string template)
+        public IList<Lecturer> GetLecturersByFirstMatching(string template, int count)
         {
-            if(template.Length > 0)
-                template = template.First().ToString().ToUpper() + template.Substring(1);
+            if (!String.IsNullOrEmpty(template))
+            {
+                if (template.Length > 0)
+                    template = template.First().ToString().ToUpper() + template.Substring(1);
 
 
-            var query = Query.Matches("Name", "/^" + template.Trim() + "/");
-            return _lecturers.Find(query).Take(15).ToList();
+                var query = Query.Matches("Name", "/^" + template.Trim() + "/");
+                return _lecturers.Find(query).Take(count).ToList();
+            }
+            return new List<Lecturer>() { };
         }
 
-        public IList<ScheduleData.Models.Group> GetGroupsByFirstMatching(string template)
+        public IList<ScheduleData.Models.Group> GetGroupsByFirstMatching(string template, int count)
         {
             if (!String.IsNullOrEmpty(template))
             {
@@ -167,7 +184,7 @@ namespace ScheduleData.Services
                     Query.Matches("Code", "/^" + template.Trim() + "/"),
                     Query.Matches("SpecialityName", "/^" + template.Trim() + "/")
                     );
-                return _groups.Find(query).Take(15).ToList();
+                return _groups.Find(query).Take(count).ToList();
             }
             return new List<ScheduleData.Models.Group>() { };
         }
@@ -902,6 +919,11 @@ namespace ScheduleData.Services
         public List<Time> GetAllTimes()
         {
             return _times.FindAll().ToList();
+        }
+
+        public List<Schedule> GetAllSchedules(int count)
+        {
+            return _schedules.FindAll().Take(count).ToList();
         }
 
         public List<Placing> GetPlacingsForSelector(List<string> buildingAndAuditoriumNames, List<string> days, List<string> times, int auditoriumType, string viewType)

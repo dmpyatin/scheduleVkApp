@@ -12,7 +12,7 @@ namespace ScheduleData.Models
         public ObjectId Id { get; set; }
         public string Name { get; set; }
         public string ShortName { get; set; }
-
+        public string Address { get; set; }
 
         public string IAIS_ID { get; set; }
     }
