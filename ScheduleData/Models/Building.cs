@@ -14,6 +14,8 @@ namespace ScheduleData.Models
         public string ShortName { get; set; }
         public string Address { get; set; }
 
+        public bool Living { get; set; }
+
         public string IAIS_ID { get; set; }
     }
 }

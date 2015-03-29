@@ -91,6 +91,18 @@ namespace ScheduleData.Services
             return _buildings.Find(query).Take(15).ToList();
         }
 
+
+        public IList<Building> GetAllBuildings(bool withLiving)
+        {
+
+            if (!withLiving)
+            {
+                var query = Query<Building>.EQ(x => x.Living, false);
+                return _buildings.Find(query).ToList();
+            }
+
+            return _buildings.FindAll().ToList();
+        }
         public IList<TutorialType> GetTutorialTypesByFirstMatching(string template)
         {
             if (template.Length > 0)
@@ -132,6 +144,33 @@ namespace ScheduleData.Services
                                  Query.Matches("BuildingShortName", "/^" + template.Trim() + "/"));
 
             return _auditoriums.Find(query).Take(20).ToList();
+        }
+
+
+        
+
+
+        //TODO improve
+        public IList<Auditorium> GetFreeAuditoriums(string buildingShortName, int day, string startTime, string endTime, int type, int count)
+        {
+
+            var scheduleQuery = Query.And(Query<Schedule>.EQ(x => x.CurrentVersion.DayOfWeek, day),
+                                          Query<Schedule>.EQ(x => x.CurrentVersion.StartTime, startTime),
+                                          Query<Schedule>.EQ(x => x.CurrentVersion.EndTime, endTime));                    
+
+
+            var schedules = _schedules.Find(scheduleQuery).ToList();
+
+
+            var auditoriumQuery = Query.And(Query<Auditorium>.EQ(x => x.BuildingShortName, buildingShortName),
+                                            Query<Auditorium>.EQ(x => x.Type, type));
+
+            var auditoriums = _auditoriums.Find(auditoriumQuery).ToList();
+
+
+            var result = auditoriums.Where(x => !schedules.Any(y => y.CurrentVersion.AuditoriumNumber == x.Number && y.CurrentVersion.BuildingName == x.BuildingShortName)).Take(count).ToList();
+
+            return result;
         }
 
         public IList<Time> GetTimesByFirstMatching(string template)
@@ -567,6 +606,7 @@ namespace ScheduleData.Services
 
             _schedules.FindAndModify(query, sortBy, update);
         }
+
 
 
         public IList<Schedule> GetAgregateSchedulesForLecturer(string lecturerName)

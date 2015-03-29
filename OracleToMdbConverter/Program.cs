@@ -17,7 +17,7 @@ namespace OracleToMdbConverter
             converter.Load("specialities");
             converter.SaveAll();*/
 
-            //converter.SyncBuildings(true);
+            converter.SyncBuildings(true);
         }
     }
 }

@@ -89,6 +89,20 @@ namespace ScheduleApp.Controllers
     }
 
 
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class SchedulesForAuditoriumController : ApiController
+    {
+        DataService _dataService;
+
+        public IList<ScheduleData.Models.Schedule> Get(string auditoriumNumber, string buildingShortName)
+        {
+            _dataService = new DataService();
+            var result = _dataService.GetSchedulesForAuditorium(auditoriumNumber, buildingShortName);
+
+            return result;
+        }
+    }
+
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class BuildingsController : ApiController
@@ -98,7 +112,7 @@ namespace ScheduleApp.Controllers
         public IList<ScheduleData.Models.Building> Get()
         {
             _dataService = new DataService();
-            var result = _dataService.GetAllBuildings();
+            var result = _dataService.GetAllBuildings(false);
 
             return result;
         }
@@ -119,6 +133,26 @@ namespace ScheduleApp.Controllers
             return result;
         }
     }
+
+
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class FreeAuditoriumsController : ApiController
+    {
+        DataService _dataService;
+
+        public IList<ScheduleData.Models.Auditorium> Get(string buildingShortName, int day, string startTime, string endTime, int type, int count)
+        {
+            if (count > 15) count = 15;
+
+            _dataService = new DataService();
+            var result = _dataService.GetFreeAuditoriums(buildingShortName, day, startTime, endTime, type, count);
+
+            return result;
+        }
+    }
+
+
+    
 
 
 }

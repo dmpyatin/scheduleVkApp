@@ -1,5 +1,4 @@
 ﻿(function () {
-    var app = angular.module('schedule');
     var controllerId = 'reportController';
     app.controller(controllerId, [
         '$scope', '$http', '$cookies', function ($scope, $http, $cookies) {

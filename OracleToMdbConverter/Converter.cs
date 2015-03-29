@@ -75,37 +75,23 @@ namespace OracleToMdbConverter
         }
 
 
-        void LoadBuildings(bool withLiving)
+        void LoadBuildings()
         {
             oracleConn.Open();
 
             var cmd = oracleConn.CreateCommand();
-
-            if (!withLiving)
-            {
-                cmd.CommandText = @"SELECT        
+ 
+            cmd.CommandText = @"SELECT        
                                     ID AS IAIS_ID, 
                                     NAMEFULL AS Name, 
                                     NAMESHORT AS ShortName,
-                                    ADDRESS AS Address
-                                FROM            
-                                    SDMS.B_BULDINGS
-                                WHERE        
-                                    (STATUS = 'Y' AND 
-                                     TYPE_HOST IS NULL)";
-            }
-            else
-            {
-                cmd.CommandText = @"SELECT        
-                                    ID AS IAIS_ID, 
-                                    NAMEFULL AS Name, 
-                                    NAMESHORT AS ShortName,
-                                    ADDRESS AS Address
+                                    ADDRESS AS Address,
+                                    TYPE_HOST AS Living
                                 FROM            
                                     SDMS.B_BULDINGS
                                 WHERE        
                                     (STATUS = 'Y')";
-            }
+            
             var reader = cmd.ExecuteReader();
 
  
@@ -124,15 +110,24 @@ namespace OracleToMdbConverter
                     Address = reader.GetString(3);
                 }
 
+                bool Living = false;
+
+                if (!reader.IsDBNull(4))
+                {
+                    reader.GetString(4);
+                    Living = true;
+                }
+               
+
                 var building = new Building()
                 {
                     IAIS_ID = IAIS_Id.ToString(),
                     Name = Name,
                     ShortName = ShortName,
-                    Address = Address
+                    Address = Address,
+                    Living = Living
                 };
 
-                //_buildings.Insert(building);
                 _orBuildings.Add(building);
             }
 
@@ -239,7 +234,7 @@ namespace OracleToMdbConverter
         {
             if (tableName == "buildings")
             {
-                this.LoadBuildings(false);
+                this.LoadBuildings();
             }
 
             if (tableName == "auditoriums")
@@ -265,7 +260,7 @@ namespace OracleToMdbConverter
         {
             if (_orBuildings.Count == 0)
             {
-                this.LoadBuildings(true);
+                this.LoadBuildings();
             }
 
             if (removePrevious)
@@ -294,7 +289,8 @@ namespace OracleToMdbConverter
                         .Set(x => x.IAIS_ID, building.IAIS_ID)
                         .Set(x => x.Name, building.Name)
                         .Set(x => x.ShortName, building.ShortName)
-                        .Set(x => x.Address, building.Address);
+                        .Set(x => x.Address, building.Address)
+                        .Set(x => x.Living, building.Living);
 
                     _buildings.FindAndModify(query, SortBy.Null, update);
                 }
