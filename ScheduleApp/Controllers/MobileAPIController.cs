@@ -8,8 +8,10 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Mvc;
+using ScheduleData.Models.IAISDataWrappers;
+using ScheduleData.Infrastructure;
 
-namespace ScheduleApp.Controllers
+namespace ScheduleApp.Controllers 
 {
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
@@ -17,12 +19,16 @@ namespace ScheduleApp.Controllers
     {
         DataService _dataService;
 
-        public IList<ScheduleData.Models.Group> Get(string template, int count)
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Group> Get(string template, int count)
         {
             if (count > 15) count = 15;
 
             _dataService = new DataService();
-            var result = _dataService.GetGroupsByFirstMatching(template, count);
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetGroupsByFirstMatching(template, count)
+                .Select(x => _dataConverter.GetGroup(x)).ToList();
             return result;
         }
     }
@@ -32,12 +38,16 @@ namespace ScheduleApp.Controllers
     {
         DataService _dataService;
 
-        public IList<ScheduleData.Models.Lecturer> Get(string template, int count)
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Lecturer> Get(string template, int count)
         {
             if (count > 15) count = 15;
 
             _dataService = new DataService();
-            var result = _dataService.GetLecturersByFirstMatching(template, count);
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetLecturersByFirstMatching(template, count)
+                .Select(x => _dataConverter.GetLecturer(x)).ToList();
             return result;
         }
     }
@@ -47,12 +57,16 @@ namespace ScheduleApp.Controllers
     {
         DataService _dataService;
 
-        public IList<ScheduleData.Models.Auditorium> Get(string template, int count)
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Auditorium> Get(string template, int count)
         {
             if (count > 15) count = 15;
 
             _dataService = new DataService();
-            var result = _dataService.GetAuditoriumsByFirstMatching(template, count);
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetAuditoriumsByFirstMatching(template, count)
+                .Select(x => _dataConverter.GetAuditorium(x)).ToList();
 
             return result;
         }
@@ -64,11 +78,15 @@ namespace ScheduleApp.Controllers
     {
         DataService _dataService;
 
-        public IList<ScheduleData.Models.Schedule> Get(string groupCode, string specialityName)
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Schedule> Get(string groupCode, string specialityCode)
         {
 
             _dataService = new DataService();
-            var result = _dataService.GetSchedulesForGroup(groupCode, specialityName);
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetSchedulesForGroupAPI_Improved(groupCode, specialityCode)
+                .Select(x => _dataConverter.GetSchedule(x)).ToList();
 
             return result;
         }
@@ -79,10 +97,14 @@ namespace ScheduleApp.Controllers
     {
         DataService _dataService;
 
-        public IList<ScheduleData.Models.Schedule> Get(string lecturerName)
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Schedule> Get(string lecturerName)
         {
             _dataService = new DataService();
-            var result = _dataService.GetAgregateSchedulesForLecturer(lecturerName);
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetSchedulesForLecturer(lecturerName)
+                .Select(x => _dataConverter.GetSchedule(x)).ToList();
 
             return result;
         }
@@ -90,20 +112,98 @@ namespace ScheduleApp.Controllers
 
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class AgregatedSchedulesForLecturerController : ApiController
+    {
+        DataService _dataService;
+
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Schedule> Get(string lecturerName)
+        {
+            _dataService = new DataService();
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetAgregateSchedulesForLecturer(lecturerName)
+                .Select(x => _dataConverter.GetSchedule(x)).ToList();
+
+            return result;
+        }
+    }
+
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class StrongAgregatedSchedulesForLecturerController : ApiController
+    {
+        DataService _dataService;
+
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Schedule> Get(string lecturerName)
+        {
+            _dataService = new DataService();
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetStrongAgregateSchedulesForLecturer(lecturerName)
+                .Select(x => _dataConverter.GetSchedule(x)).ToList();
+
+            return result;
+        }
+    }
+
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SchedulesForAuditoriumController : ApiController
     {
         DataService _dataService;
 
-        public IList<ScheduleData.Models.Schedule> Get(string auditoriumNumber, string buildingShortName)
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Schedule> Get(string auditoriumNumber, string buildingShortName)
         {
             _dataService = new DataService();
-            var result = _dataService.GetSchedulesForAuditorium(auditoriumNumber, buildingShortName);
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetSchedulesForAuditorium(auditoriumNumber, buildingShortName)
+                .Select(x => _dataConverter.GetSchedule(x)).ToList();
 
             return result;
         }
     }
 
 
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class AgregatedSchedulesForAuditoriumController : ApiController
+    {
+        DataService _dataService;
+
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Schedule> Get(string auditoriumNumber, string buildingShortName)
+        {
+            _dataService = new DataService();
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetAgregateSchedulesForAuditorium(auditoriumNumber, buildingShortName)
+                .Select(x => _dataConverter.GetSchedule(x)).ToList();
+
+            return result;
+        }
+    }
+
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class StrongAgregatedSchedulesForAuditoriumController : ApiController
+    {
+        DataService _dataService;
+
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Schedule> Get(string auditoriumNumber, string buildingShortName)
+        {
+            _dataService = new DataService();
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetStrongAgregateSchedulesForAuditorium(auditoriumNumber, buildingShortName)
+                .Select(x => _dataConverter.GetSchedule(x)).ToList();
+
+            return result;
+        }
+    }
+
+
+    //TODO
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class BuildingsController : ApiController
     {
@@ -118,34 +218,46 @@ namespace ScheduleApp.Controllers
         }
     }
 
+
+
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SchedulesController : ApiController
     {
         DataService _dataService;
 
-        public IList<ScheduleData.Models.Schedule> Get(int count)
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Schedule> Get(int count)
         {
             if (count > 15) count = 15;
 
             _dataService = new DataService();
-            var result = _dataService.GetAllSchedules(count);
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetAllSchedules(count)
+                .Select(x => _dataConverter.GetSchedule(x)).ToList();
 
             return result;
         }
     }
 
+    
 
+    //TODO
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class FreeAuditoriumsController : ApiController
     {
         DataService _dataService;
 
-        public IList<ScheduleData.Models.Auditorium> Get(string buildingShortName, int day, string startTime, string endTime, int type, int count)
+        DataConverter _dataConverter;
+
+        public IList<ScheduleData.Models.IAISDataWrappers.Auditorium> Get(string buildingShortName, int day, string startTime, string endTime, int type, int count)
         {
             if (count > 15) count = 15;
 
             _dataService = new DataService();
-            var result = _dataService.GetFreeAuditoriums(buildingShortName, day, startTime, endTime, type, count);
+            _dataConverter = new DataConverter();
+            var result = _dataService.GetFreeAuditoriums(buildingShortName, day, startTime, endTime, type, count)
+                .Select(x => _dataConverter.GetAuditorium(x)).ToList();
 
             return result;
         }

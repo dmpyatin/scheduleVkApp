@@ -60,6 +60,7 @@
     <Compile Include="Exceptions\ProfileSelectorAlreadyExsistsException.cs" />
     <Compile Include="Exceptions\ProfileSelectorNotFoundException.cs" />
     <Compile Include="Exceptions\UserAlreadyExsistException.cs" />
+    <Compile Include="Infrastructure\DataConverter.cs" />
     <Compile Include="Infrastructure\MailSender.cs" />
     <Compile Include="Exceptions\IncorrectAuthCodeException.cs" />
     <Compile Include="Exceptions\UserNotFoundException.cs" />
@@ -70,7 +71,11 @@
     <Compile Include="Models\DataTransfer\Placing.cs" />
     <Compile Include="Models\DataTransfer\PlanningQuartersCounter.cs" />
     <Compile Include="Models\DataTransfer\PlanningScheduleCounter.cs" />
+    <Compile Include="Models\IAISDataWrappers\Auditorium.cs" />
     <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\IAISDataWrappers\Group.cs" />
+    <Compile Include="Models\IAISDataWrappers\Lecturer.cs" />
+    <Compile Include="Models\IAISDataWrappers\Schedule.cs" />
     <Compile Include="Models\Lecturer.cs" />
     <Compile Include="Models\DataTransfer\PlanningQuartersProfile.cs" />
     <Compile Include="Models\PlanningQuartersProfileSelector.cs" />

@@ -239,6 +239,16 @@ namespace ScheduleData.Services
             return _schedules.Find(query).ToList();
         }
 
+        public IList<Schedule> GetSchedulesForGroupAPI_Improved(string groupCode, string specialityCode)
+        {
+            var query = Query.And(
+                Query<Schedule>.Matches(x => x.CurrentVersion.GroupCode, groupCode),
+                Query<Schedule>.Matches(x => x.CurrentVersion.SpecialityCode, specialityCode)
+                );
+
+            return _schedules.Find(query).ToList();
+        }
+
         public IList<Schedule> GetSchedulesForLecturer(string lecturerName)
         {
             var query = Query<Schedule>.Matches(x => x.CurrentVersion.LecturerName, lecturerName);
@@ -642,6 +652,104 @@ namespace ScheduleData.Services
             return agrSchedules;
         }
 
+
+        public IList<Schedule> GetStrongAgregateSchedulesForLecturer(string lecturerName)
+        {
+            var query = Query<Schedule>.Matches(x => x.CurrentVersion.LecturerName, lecturerName);
+
+            var schedules = _schedules.Find(query).ToList();
+
+            var agrSchedules = new List<Schedule>();
+
+            foreach (var s in schedules)
+            {
+                var sl = agrSchedules.Where(x => x.CurrentVersion.DayOfWeek == s.CurrentVersion.DayOfWeek &&
+                                    x.CurrentVersion.WeekTypeName == s.CurrentVersion.WeekTypeName &&
+                                    x.CurrentVersion.PairNumber == s.CurrentVersion.PairNumber).ToList();
+
+                if (sl.Count == 0)
+                {
+                    agrSchedules.Add(s);
+                }
+                else
+                {
+                    agrSchedules.Remove(sl[0]);
+                    sl[0].CurrentVersion.GroupCode += ", " + s.CurrentVersion.GroupCode;
+                    agrSchedules.Add(sl[0]);
+                }
+
+            }
+
+            return agrSchedules;
+        }
+
+        public IList<Schedule> GetAgregateSchedulesForAuditorium(string auditoriumNumber, string buildingShortName)
+        {
+    
+            var query = Query.And(Query<Schedule>.Matches(x => x.CurrentVersion.AuditoriumNumber, auditoriumNumber),
+                                 Query<Schedule>.Matches(x => x.CurrentVersion.BuildingName, buildingShortName));
+
+            var schedules = _schedules.Find(query).ToList();
+
+            var agrSchedules = new List<Schedule>();
+
+            foreach (var s in schedules)
+            {
+                var sl = agrSchedules.Where(x => x.CurrentVersion.DayOfWeek == s.CurrentVersion.DayOfWeek &&
+                                    x.CurrentVersion.WeekTypeName == s.CurrentVersion.WeekTypeName &&
+                                    x.CurrentVersion.PairNumber == s.CurrentVersion.PairNumber &&
+                                    x.CurrentVersion.TutorialName == s.CurrentVersion.TutorialName &&
+                                    x.CurrentVersion.TutorialTypeName == s.CurrentVersion.TutorialTypeName &&
+                                    x.CurrentVersion.LecturerName == x.CurrentVersion.LecturerName).ToList();
+
+                if (sl.Count == 0)
+                {
+                    agrSchedules.Add(s);
+                }
+                else
+                {
+                    agrSchedules.Remove(sl[0]);
+                    sl[0].CurrentVersion.GroupCode += ", " + s.CurrentVersion.GroupCode;
+                    agrSchedules.Add(sl[0]);
+                }
+
+            }
+
+            return agrSchedules;
+        }
+
+
+        public IList<Schedule> GetStrongAgregateSchedulesForAuditorium(string auditoriumNumber, string buildingShortName)
+        {
+
+            var query = Query.And(Query<Schedule>.Matches(x => x.CurrentVersion.AuditoriumNumber, auditoriumNumber),
+                                 Query<Schedule>.Matches(x => x.CurrentVersion.BuildingName, buildingShortName));
+
+            var schedules = _schedules.Find(query).ToList();
+
+            var agrSchedules = new List<Schedule>();
+
+            foreach (var s in schedules)
+            {
+                var sl = agrSchedules.Where(x => x.CurrentVersion.DayOfWeek == s.CurrentVersion.DayOfWeek &&
+                                    x.CurrentVersion.WeekTypeName == s.CurrentVersion.WeekTypeName &&
+                                    x.CurrentVersion.PairNumber == s.CurrentVersion.PairNumber).ToList();
+
+                if (sl.Count == 0)
+                {
+                    agrSchedules.Add(s);
+                }
+                else
+                {
+                    agrSchedules.Remove(sl[0]);
+                    sl[0].CurrentVersion.GroupCode += ", " + s.CurrentVersion.GroupCode;
+                    agrSchedules.Add(sl[0]);
+                }
+
+            }
+
+            return agrSchedules;
+        }
 
         public IList<Speciality> GetAllSpecialities()
         {
