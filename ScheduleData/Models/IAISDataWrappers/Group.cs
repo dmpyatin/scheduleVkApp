@@ -8,13 +8,13 @@ namespace ScheduleData.Models.IAISDataWrappers
 {
     public class Group
     {
-        public string Id { get; set; }
+        public string id { get; set; }
 
-        public string Code { get; set; }
-        public string Course { get; set; }
-        public string FacultyName { get; set; }
-        public string SpecialityName { get; set; }
-        public string SpecialityCode { get; set; }
+        public string code { get; set; }
+        public string course { get; set; }
+        public string facultyname { get; set; }
+        public string specialityname { get; set; }
+        public string specialitycode { get; set; }
     }
 
     /*

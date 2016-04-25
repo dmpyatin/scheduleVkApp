@@ -8,47 +8,153 @@ namespace ScheduleData.Models.IAISDataWrappers
 {
     public class Schedule
     {
-        public string Id { get; set; }
-        public string AuditoriumId { get; set; }
-        public string LecturerId { get; set; }
-        public string GroupId { get; set; }
+        public string id { get; set; }
+        public string auditoriumid { get; set; }
+        public string lecturerid { get; set; }
+        public string groupid { get; set; }
 
-        public string LecturerFullName { get; set; }
-        public string LecturerFirstName { get; set; }
-        public string LecturerLastName { get; set; }
-        public string LecturerSecondName { get; set; }
+        public string fullname { get; set; }
+        public string fullnames { get; set; }
+        public string firstname { get; set; }
+        public string lastname { get; set; }
+        public string secondname { get; set; }
 
-        public string TutorialName { get; set; }
-        public string TutorialTypeName { get; set; }
+        public string tutorialname { get; set; }
+        public string tutorialtypename { get; set; }
 
-        public string SubGroupName { get; set; }
+        public string subgroupname { get; set; }
 
-        public string AuditoriumNumber { get; set; }
-        public string BuildingName { get; set; }
-        public string BuildingAddress { get; set; }
+        public string auditoriumnumber { get; set; }
+        public string buildingname { get; set; }
+        public string buildingaddress { get; set; }
 
-        public string StartTime { get; set; }
-        public string EndTime { get; set; }
-        public string StartDate { get; set; }
-        public string EndDate { get; set; }
+        public string starttime { get; set; }
+        public string endtime { get; set; }
+        public string startdate { get; set; }
+        public string enddate { get; set; }
 
-        public string WeekTypeName { get; set; }
-        public int PairNumber { get; set; }
-        public int DayOfWeek { get; set; }
+        public string weektypename { get; set; }
+        public int pairnumber { get; set; }
+        public int dayofweek { get; set; }
 
-        public string StudyYear { get; set; }
-        public string SemesterName { get; set; }
-        public string StudyForm { get; set; }
-        public string SpecialityCode { get; set; }
-        public string SpecialityName { get; set; }
-        public string GroupCode { get; set; }
+        public string studyyear { get; set; }
+        public string semestername { get; set; }
+        public string studyform { get; set; }
+        public string specialitycode { get; set; }
+        public string specialityname { get; set; }
+        public string groupcode { get; set; }
 
-        public int Course { get; set; }
+        public int course { get; set; }
 
     }
 }
 
+/*
+ * in: auditoriumNumber string, buildingShortName string
+SELECT 
 
+  MAX(LecturerId) AS LecturerId,
+  MAX(AuditoriumId) AS AuditoriumId,
+  MAX(GroupId) AS GroupId,
+  
+  MAX(Firstname) AS Firstname,
+  MAX(Secondname) AS Secondname,
+  MAX(Lastname) AS Lastname,
+  LISTAGG(SubGroupName, ', ')  WITHIN GROUP (ORDER BY SubGroupName) AS SubGroupName,
+  MAX(AuditoriumName) AS AuditoriumName,
+  
+  MAX(BuildingName) AS BuildingName,
+  MAX(BuildingAddress) AS BuildingAddress,
+  MAX(StartDate) AS StartDate,
+  MAX(EndDate) AS EndDate,
+  MAX(StudyYear) AS StudyYear,
+  MAX(Semester) AS Semester,
+  MAX(StudyForm) AS StudyForm,
+  
+  LISTAGG(SpecialityCode, ', ') WITHIN GROUP (ORDER BY SpecialityCode) AS SpecialityCode,
+  LISTAGG(SpecialityName, ', ') WITHIN GROUP (ORDER BY SpecialityName) AS SpecialityName,
+  LISTAGG(GroupCode, ', ') WITHIN GROUP (ORDER BY GroupCode) AS GroupCode,
+  LISTAGG(Course, ', ') WITHIN GROUP (ORDER BY Course) AS Course,
+  
+  STARTTIME, 
+  ENDTIME, 
+  WEEKTYPENAME, 
+  PAIRNUMBER, 
+  FULLNAME, 
+  TUTORIALNAME,
+  AUDITORIUMNUMBER
+
+FROM
+
+SCHEDULE_VIEW
+
+WHERE
+  AUDITORIUMNUMBER = auditoriumNumber AND
+  BUILDINGSHORTNAME = buildingShortName
+
+GROUP BY
+  STARTTIME, 
+  ENDTIME, 
+  WEEKTYPENAME, 
+  PAIRNUMBER, 
+  FULLNAME, 
+  TUTORIALNAME,
+  AUDITORIUMNUMBER
+
+*/
+
+/*
+ * in: lecturerFullName string
+SELECT 
+
+  MAX(LecturerId) AS LecturerId,
+  MAX(AuditoriumId) AS AuditoriumId,
+  MAX(GroupId) AS GroupId,
+  
+  MAX(Firstname) AS Firstname,
+  MAX(Secondname) AS Secondname,
+  MAX(Lastname) AS Lastname,
+  LISTAGG(SubGroupName, ', ')  WITHIN GROUP (ORDER BY SubGroupName) AS SubGroupName,
+  MAX(AuditoriumName) AS AuditoriumName,
+  
+  MAX(BuildingName) AS BuildingName,
+  MAX(BuildingAddress) AS BuildingAddress,
+  MAX(StartDate) AS StartDate,
+  MAX(EndDate) AS EndDate,
+  MAX(StudyYear) AS StudyYear,
+  MAX(Semester) AS Semester,
+  MAX(StudyForm) AS StudyForm,
+  
+  LISTAGG(SpecialityCode, ', ') WITHIN GROUP (ORDER BY SpecialityCode) AS SpecialityCode,
+  LISTAGG(SpecialityName, ', ') WITHIN GROUP (ORDER BY SpecialityName) AS SpecialityName,
+  LISTAGG(GroupCode, ', ') WITHIN GROUP (ORDER BY GroupCode) AS GroupCode,
+  LISTAGG(Course, ', ') WITHIN GROUP (ORDER BY Course) AS Course,
+  
+  STARTTIME, 
+  ENDTIME, 
+  WEEKTYPENAME, 
+  PAIRNUMBER, 
+  FULLNAME, 
+  TUTORIALNAME,
+  AUDITORIUMNUMBER
+
+FROM
+
+SCHEDULE_VIEW
+
+WHERE
+  FULLNAME = lecturerFullName
+
+GROUP BY
+  STARTTIME, 
+  ENDTIME, 
+  WEEKTYPENAME, 
+  PAIRNUMBER, 
+  FULLNAME, 
+  TUTORIALNAME,
+  AUDITORIUMNUMBER
+
+*/
 
 /*
  * in: lecturerName string
@@ -57,7 +163,6 @@ WHERE
 	LECTURERFULLNAME = lecturerName
 GROUP_BY
 
- 
  
  
 in: lecturerName string

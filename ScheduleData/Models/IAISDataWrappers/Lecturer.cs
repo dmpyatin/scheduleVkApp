@@ -8,11 +8,13 @@ namespace ScheduleData.Models.IAISDataWrappers
 {
     public class Lecturer
     {
-        public string FirstName { get; set; }
-        public string SecondName { get; set; }
-        public string LastName { get; set; }
+        public string firstname { get; set; }
+        public string secondname { get; set; }
+        public string lastname { get; set; }
 
-        public string FullName { get; set; }
+        public string fullname { get; set; }
+
+        public string fullnames { get; set; }
     }
 }
 

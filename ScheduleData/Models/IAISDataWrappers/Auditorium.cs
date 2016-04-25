@@ -9,13 +9,13 @@ namespace ScheduleData.Models.IAISDataWrappers
 
     public class Auditorium
     {
-        public string Id { get; set; }
+        public string id { get; set; }
 
-        public string Num { get; set; }
-        public string BuildingShortName { get; set; }
-        public int Building { get; set; }
-        public string ShortName { get; set; }
-        public string IAIS_ID { get; set; }
+        public string num { get; set; }
+        public string buildingshortname { get; set; }
+        public int building { get; set; }
+        public string shortname { get; set; }
+        public string iais_id { get; set; }
     }
 
     /*

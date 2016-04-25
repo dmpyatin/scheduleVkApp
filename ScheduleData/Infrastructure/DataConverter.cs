@@ -12,10 +12,10 @@ namespace ScheduleData.Infrastructure
         {
             var res = new ScheduleData.Models.IAISDataWrappers.Auditorium()
             {
-                Building = auditorium.Building,
-                Num = auditorium.Number,
-                BuildingShortName = auditorium.BuildingShortName,
-                ShortName = auditorium.ShortName,
+                building = auditorium.Building,
+                num = auditorium.Number,
+                buildingshortname = auditorium.BuildingShortName,
+                shortname = auditorium.ShortName,
 
             };
 
@@ -27,7 +27,8 @@ namespace ScheduleData.Infrastructure
         {
             var res = new ScheduleData.Models.IAISDataWrappers.Lecturer()
             {
-                FullName = lecturer.Name
+                fullname = lecturer.Name,
+                fullnames = lecturer.Name
             };
 
             return res;
@@ -49,10 +50,10 @@ namespace ScheduleData.Infrastructure
 
             var res = new ScheduleData.Models.IAISDataWrappers.Group()
             {
-                Code = group.Code,
-                Course = group.Course.ToString(),
-                SpecialityName = specialityName,
-                SpecialityCode = specialityCode
+                code = group.Code,
+                course = group.Course.ToString(),
+                specialityname = specialityName,
+                specialitycode = specialityCode
             };
 
             return res;
@@ -73,35 +74,35 @@ namespace ScheduleData.Infrastructure
 
             var res = new ScheduleData.Models.IAISDataWrappers.Schedule()
             {
-                Id = schedule.Id.ToString(),
-                LecturerFullName = schedule.CurrentVersion.LecturerName,
-                TutorialName = schedule.CurrentVersion.TutorialName,
-                TutorialTypeName = schedule.CurrentVersion.TutorialTypeName,
-                SubGroupName = schedule.CurrentVersion.SubGroupName,
+                id = schedule.Id.ToString(),
+                fullname = schedule.CurrentVersion.LecturerName,
+                tutorialname = schedule.CurrentVersion.TutorialName,
+                tutorialtypename = schedule.CurrentVersion.TutorialTypeName,
+                subgroupname = schedule.CurrentVersion.SubGroupName,
 
-                AuditoriumNumber = schedule.CurrentVersion.AuditoriumNumber,
-                BuildingName = schedule.CurrentVersion.BuildingName,
-                BuildingAddress = schedule.CurrentVersion.BuildingAddress,
+                auditoriumnumber = schedule.CurrentVersion.AuditoriumNumber,
+                buildingname = schedule.CurrentVersion.BuildingName,
+                buildingaddress = schedule.CurrentVersion.BuildingAddress,
 
-                StartTime = schedule.CurrentVersion.StartTime,
-                EndTime = schedule.CurrentVersion.EndTime,
+                starttime = schedule.CurrentVersion.StartTime,
+                endtime = schedule.CurrentVersion.EndTime,
 
-                StartDate = schedule.CurrentVersion.StartDate,
-                EndDate = schedule.CurrentVersion.EndDate,
+                startdate = schedule.CurrentVersion.StartDate,
+                enddate = schedule.CurrentVersion.EndDate,
 
-                WeekTypeName = schedule.CurrentVersion.WeekTypeName,
-                PairNumber = schedule.CurrentVersion.PairNumber,
-                DayOfWeek = schedule.CurrentVersion.DayOfWeek,
+                weektypename = schedule.CurrentVersion.WeekTypeName,
+                pairnumber = schedule.CurrentVersion.PairNumber,
+                dayofweek = schedule.CurrentVersion.DayOfWeek,
 
 
-                StudyYear = schedule.CurrentVersion.StudyYear,
-                SemesterName = schedule.CurrentVersion.SemesterName,
-                StudyForm = schedule.CurrentVersion.StudyForm,
-                SpecialityCode = specialityCode,
+                studyyear = schedule.CurrentVersion.StudyYear,
+                semestername = schedule.CurrentVersion.SemesterName,
+                studyform = schedule.CurrentVersion.StudyForm,
+                specialitycode = specialityCode,
 
-                SpecialityName = specialityName,
-                GroupCode = schedule.CurrentVersion.GroupCode,
-                Course = schedule.CurrentVersion.Course
+                specialityname = specialityName,
+                groupcode = schedule.CurrentVersion.GroupCode,
+                course = schedule.CurrentVersion.Course
             };
 
             return res;

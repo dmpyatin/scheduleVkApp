@@ -15,7 +15,7 @@ namespace ScheduleData.Infrastructure
 
         public bool IsValidDomain(string strIn)
         {   
-            return Regex.IsMatch(strIn, @"\@(petrsu.ru|cs.karelia.ru)$");
+            return Regex.IsMatch(strIn, @"\@(petrsu.ru|cs.karelia.ru|gmail.com|yandex.ru)$");
         }
 
         public bool IsValidEmail(string strIn)

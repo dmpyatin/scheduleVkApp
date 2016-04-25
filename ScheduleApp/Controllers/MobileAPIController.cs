@@ -15,7 +15,7 @@ namespace ScheduleApp.Controllers
 {
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class GroupsSearchController : ApiController
+    public class groupsSearchController : ApiController
     {
         DataService _dataService;
 
@@ -34,7 +34,7 @@ namespace ScheduleApp.Controllers
     }
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class LecturersSearchController : ApiController
+    public class lecturersSearchController : ApiController
     {
         DataService _dataService;
 
@@ -53,7 +53,7 @@ namespace ScheduleApp.Controllers
     }
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class AuditoriumsSearchController : ApiController
+    public class auditoriumsSearchController : ApiController
     {
         DataService _dataService;
 
@@ -74,7 +74,7 @@ namespace ScheduleApp.Controllers
 
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class SchedulesForGroupController : ApiController
+    public class schedulesForGroupController : ApiController
     {
         DataService _dataService;
 
@@ -93,7 +93,7 @@ namespace ScheduleApp.Controllers
     }
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class SchedulesForLecturerController : ApiController
+    public class schedulesForLecturerController : ApiController
     {
         DataService _dataService;
 
@@ -112,7 +112,7 @@ namespace ScheduleApp.Controllers
 
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class AgregatedSchedulesForLecturerController : ApiController
+    public class agregatedSchedulesForLecturerController : ApiController
     {
         DataService _dataService;
 
@@ -130,7 +130,7 @@ namespace ScheduleApp.Controllers
     }
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class StrongAgregatedSchedulesForLecturerController : ApiController
+    public class strongAgregatedSchedulesForLecturerController : ApiController
     {
         DataService _dataService;
 
@@ -148,7 +148,7 @@ namespace ScheduleApp.Controllers
     }
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class SchedulesForAuditoriumController : ApiController
+    public class schedulesForAuditoriumController : ApiController
     {
         DataService _dataService;
 
@@ -167,7 +167,7 @@ namespace ScheduleApp.Controllers
 
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class AgregatedSchedulesForAuditoriumController : ApiController
+    public class agregatedSchedulesForAuditoriumController : ApiController
     {
         DataService _dataService;
 
@@ -185,7 +185,7 @@ namespace ScheduleApp.Controllers
     }
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class StrongAgregatedSchedulesForAuditoriumController : ApiController
+    public class strongAgregatedSchedulesForAuditoriumController : ApiController
     {
         DataService _dataService;
 
@@ -205,7 +205,7 @@ namespace ScheduleApp.Controllers
 
     //TODO
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class BuildingsController : ApiController
+    public class buildingsController : ApiController
     {
         DataService _dataService;
 
@@ -221,7 +221,7 @@ namespace ScheduleApp.Controllers
 
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class SchedulesController : ApiController
+    public class schedulesController : ApiController
     {
         DataService _dataService;
 
@@ -244,7 +244,7 @@ namespace ScheduleApp.Controllers
 
     //TODO
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class FreeAuditoriumsController : ApiController
+    public class freeAuditoriumsController : ApiController
     {
         DataService _dataService;
 

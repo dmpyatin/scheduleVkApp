@@ -40,10 +40,11 @@ namespace ScheduleData.Services
             {
                 if (util.IsValidDomain(mail))
                 {
-                    var query = Query.And(
+                    var query = Query<User>.Matches(x => x.Mail, mail);
+                   /* var query = Query.And(
                 Query<User>.Matches(x => x.Mail, mail),
                 Query<User>.Matches(x => x.Code, code)
-                );
+                );*/
 
                     var users = _users.Find(query).ToList();
 
